@@ -25,7 +25,7 @@ for i in range(len(Lines)-1):
     for j in num_all[i]:       
         #print("68", m.start())
         s=re.search(j, Lines[i]).start() 
-        e=re.search(j, Lines[i]).end()-1    
+        e=re.search(j, Lines[i]).end()-1   
         if is_not(Lines[i+1][s+1]):
             chosen_numbers.append(int(j))
             #chosen.update({i:num_all[i][j]})
@@ -51,6 +51,10 @@ for i in range(len(Lines)-1):
             #chosen.update({i:num_all[i][j]})
             add_num += int(j)
         elif is_not(Lines[i-1][s+1]):
+            chosen_numbers.append(int(j))
+            #chosen.update({i:num_all[i][j]})
+            add_num += int(j)
+        elif is_not(Lines[i][s+1]):
             chosen_numbers.append(int(j))
             #chosen.update({i:num_all[i][j]})
             add_num += int(j)
